@@ -1,6 +1,27 @@
 // JASKIS
 // paste the MongoDB commands you use underneath each prompt
 
+db.bouties.find({ location: 'Grasslands'});
+
+db.bounties.find({ $gte { reward: 10000 }});
+
+db.bounties.find({}, {client: 0});
+
+db.bounties.find({ $and: [{species: 'Groundhog'}, { location: 'Woodlands'}] } );
+
+db.bounties.updateOne(
+    { name:'Polarwind' },
+    {$set:{ bounty: '$10000'}});
+
+db.bounties.deleteOne({name:'Lokinkajou'});
+
+db.bounties.deleteMany({client:'Songbird'});
+
+db.bounties.updateMany(
+    { captured:false },
+    {$set:{ captured: true}});
+
+
 // GETTING STARTED
 // 1. Create a database called jaskis
 
